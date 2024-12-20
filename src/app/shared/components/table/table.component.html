@@ -1,0 +1,67 @@
+
+<table class="table table-hover">
+  <thead>
+    <tr class="table-dark">
+      <th *ngFor="let item of header">{{item}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngIf="capitals.length > 0">
+      <ng-container *ngTemplateOutlet="capitalsTemplate"></ng-container>
+    </ng-container>
+    <ng-container *ngIf="countries.length > 0">
+      <ng-container *ngTemplateOutlet="countryTemplate"></ng-container>
+    </ng-container>
+    <ng-container *ngIf="region.length > 0">
+      <ng-container *ngTemplateOutlet="regionTemplate"></ng-container>
+    </ng-container>
+  </tbody>
+</table>
+
+
+<ng-template #capitalsTemplate>
+  <tr *ngFor="let item of capitals; let i = index" >
+    <td>{{i + 1}}</td>
+    <td>
+      {{item.flag}}
+    </td>
+    <td>
+      <img [src]="item.flags.svg" [alt]="item.name.common" >
+    </td>
+    <td>{{item.name.common}}</td>
+    <td>{{item.capital}}</td>
+    <td>{{item.population | number }}</td>
+    <td><a [routerLink]="['/countries/by',item.cca3]">ver mas</a></td>
+  </tr>
+</ng-template>
+
+<ng-template #countryTemplate>
+  <tr *ngFor="let item of countries; let i = index" >
+    <td>{{i + 1}}</td>
+    <td>
+      {{item.flag}}
+    </td>
+    <td>
+      <img [src]="item.flags.svg" [alt]="item.name.common" >
+    </td>
+    <td>{{item.name.common}}</td>
+    <td>{{item.capital}}</td>
+    <td>{{item.population | number }}</td>
+    <td><a [routerLink]="['/countries/by',item.cca3]">ver mas</a></td>
+  </tr>
+</ng-template>
+
+<ng-template #regionTemplate>
+  <tr *ngFor="let item of region; let i = index" >
+    <td>{{i + 1}}</td>
+    <td>
+      <img [src]="item.flags.svg" [alt]="item.name.common" >
+    </td>
+    <td>{{item.name.common}}</td>
+    <td>{{item.capital}}</td>
+    <td>{{item.population | number }}</td>
+    <td><a [routerLink]="['/countries/by',item.cca3]">ver mas</a></td>
+  </tr>
+</ng-template>
+
+

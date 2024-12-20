@@ -1,0 +1,31 @@
+<h2>Por Capital</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <shared-searchBox
+    [placeholder]="title"
+    [inicialValue]="initialTerm"
+    (onValue)="searchByCapital($event)"
+    ></shared-searchBox>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <hr>
+    <shared-loader *ngIf="isload"></shared-loader>
+    <shared-warning
+    *ngIf="capitals.length === 0  else tabla"
+      [message]="'No se Ha Encontrado Capital'">
+    </shared-warning>
+  </div>
+</div>
+
+<ng-template #tabla>
+  <shared-table
+    [header]="tableHeader"
+    [capitals]="capitals">
+  </shared-table>
+</ng-template>
+

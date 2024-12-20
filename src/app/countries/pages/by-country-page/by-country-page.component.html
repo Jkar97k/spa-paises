@@ -1,0 +1,30 @@
+<h2>Por Pais</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <shared-searchBox
+    [placeholder]="title"
+    [inicialValue]="initialTerm"
+    (onValue)="searchByCountry($event)"
+    ></shared-searchBox>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <hr>
+    <shared-loader *ngIf="isload"></shared-loader>
+    <shared-warning
+    *ngIf="countries.length === 0  else tabla"
+      [message]="'No se Ha Encontrado Pais'">
+    </shared-warning>
+  </div>
+</div>
+
+<ng-template #tabla>
+  <shared-table
+    [header]="tableHeader"
+    [countries]="countries">
+  </shared-table>
+</ng-template>

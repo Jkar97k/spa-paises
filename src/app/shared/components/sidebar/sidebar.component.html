@@ -1,0 +1,11 @@
+<h2>Paises</h2>
+<hr>
+
+<ul class="list-group">
+  <li
+  type="button"
+  *ngFor="let item of sidebarItem"
+  routerLink={{item.route}}
+  routerLinkActive="active"
+  class="list-group-item my-1">{{item.title}}</li>
+</ul>
