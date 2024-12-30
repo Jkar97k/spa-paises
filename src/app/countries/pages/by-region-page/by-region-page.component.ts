@@ -6,9 +6,10 @@ import { Region } from '../../interfaces/region.type';
 
 
 @Component({
-  selector: 'app-by-region-page',
-  templateUrl: './by-region-page.component.html',
-  styleUrl: './by-region-page.component.css'
+    selector: 'app-by-region-page',
+    templateUrl: './by-region-page.component.html',
+    styleUrl: './by-region-page.component.css',
+    standalone: false
 })
 export class ByRegionPageComponent implements OnInit {
 

@@ -5,9 +5,10 @@ import { switchMap } from 'rxjs';
 import { Country } from '../../interfaces/country';
 
 @Component({
-  selector: 'app-country-page',
-  templateUrl: './country-page.component.html',
-  styleUrl: './country-page.component.css'
+    selector: 'app-country-page',
+    templateUrl: './country-page.component.html',
+    styleUrl: './country-page.component.css',
+    standalone: false
 })
 export class CountryPageComponent  implements OnInit{
 

@@ -3,9 +3,10 @@ import { Country } from '../../interfaces/country';
 import { CountriesService } from '../../Services/Countries.service';
 
 @Component({
-  selector: 'app-by-country-page',
-  templateUrl: './by-country-page.component.html',
-  styleUrl: './by-country-page.component.css'
+    selector: 'app-by-country-page',
+    templateUrl: './by-country-page.component.html',
+    styleUrl: './by-country-page.component.css',
+    standalone: false
 })
 export class ByCountryPageComponent implements OnInit{
 

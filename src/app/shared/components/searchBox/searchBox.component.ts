@@ -2,9 +2,10 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { debounceTime, Subject, Subscription } from 'rxjs';
 
 @Component({
-  selector: 'shared-searchBox',
-  templateUrl: './searchBox.component.html',
-  styleUrls: ['./searchBox.component.css']
+    selector: 'shared-searchBox',
+    templateUrl: './searchBox.component.html',
+    styleUrls: ['./searchBox.component.css'],
+    standalone: false
 })
 export class SearchBoxComponent implements OnInit,OnDestroy {
 
